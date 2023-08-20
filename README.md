@@ -46,35 +46,51 @@ This project aims to set up and configure an ELK stack (Elasticsearch, Logstash,
 
 ## Ubuntu Server Setup
 - Used Vagrant and Git for Windows to install a test Ubuntu Server.
+![Picture7](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/eaa95a31-6489-49ce-8e36-acd589cb426d)
+![Picture8](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/10e23e02-bd1a-479c-bc5e-2c381dd0d291)
 
 ## SSH into the Machine
 - SSH into the Ubuntu server for further setup.
-
+![Picture9](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/94a5f8c6-1a7a-4e6b-9966-93b3d48ef6be)
 ## Elasticsearch Installation
-```bash
-# Add Elasticsearch GPG key
+
+Add Elasticsearch GPG key
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
 
-# Add Elasticsearch repository
+Add Elasticsearch repository
 echo "deb https://artifacts.elastic.co/packages/oss-7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
 
-# Update package repository
+Update package repository
 apt-get update
 
-# Install Elasticsearch
+Install Elasticsearch
 apt-get install elasticsearch-oss
 
-# Enable Elasticsearch service
+Enable Elasticsearch service
 systemctl enable elasticsearch
 
-# Start Elasticsearch service
+Start Elasticsearch service
 systemctl start elasticsearch.service
 
-# Update package repository
+![Picture10](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/063bc752-8520-4288-96bd-e1b3a81b57aa)
+
+Update package repository
 apt-get update
 
-# Install Kibana
+Install Kibana
 apt-get install kibana-oss
+![Picture11](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/dcaae4a2-740e-460f-83ef-7e8dbcf9ba8d)
 
+kibana up and running under node on port 5601
+![Picture12](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/6e80bbb2-16f4-4b18-a14f-b620d4d5c20a)
 
+Accessing Kibana through the web browser o localhost port 5601
+![Picture13](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/ff9f1d67-7109-470c-bc7d-fa008cdaafa8)
+
+Installed java dependencies and installed logstash
+![Picture14](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/96485048-8470-4f09-b383-0f9979e8e247)
+![Picture15](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/aef6bf97-b1d1-4c0d-a834-f99a9808cc4a)
+
+Since logstash logs are also generated in syslog, syslogs should not be captured in logstash to avoid a loop effect which would rapdidly saturate memory ressources
+![Picture16](https://github.com/jbdjerhy/ELK_Stack/assets/142699688/9b368011-05d7-463c-8f44-7290feb0c244)
 
