@@ -41,3 +41,40 @@ This project aims to set up and configure an ELK stack (Elasticsearch, Logstash,
 - Java dependencies installed.
 - Logstash installed and configured.
 - Log management strategies implemented.
+
+# ELK Stack Installation and Configuration
+
+## Ubuntu Server Setup
+- Used Vagrant and Git for Windows to install a test Ubuntu Server.
+
+## SSH into the Machine
+- SSH into the Ubuntu server for further setup.
+
+## Elasticsearch Installation
+```bash
+# Add Elasticsearch GPG key
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
+
+# Add Elasticsearch repository
+echo "deb https://artifacts.elastic.co/packages/oss-7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+
+# Update package repository
+apt-get update
+
+# Install Elasticsearch
+apt-get install elasticsearch-oss
+
+# Enable Elasticsearch service
+systemctl enable elasticsearch
+
+# Start Elasticsearch service
+systemctl start elasticsearch.service
+
+# Update package repository
+apt-get update
+
+# Install Kibana
+apt-get install kibana-oss
+
+
+
