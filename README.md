@@ -20,19 +20,7 @@ This project aims to set up and configure an ELK stack (Elasticsearch, Logstash,
 5. **Logstash Installation:** Install and configure Logstash to collect and process logs.
 6. **Log Management:** Implement proper log management strategies to prevent log loop issues.
 
-## Resources
-- Ubuntu Server VM provisioned using Vagrant.
-- Elasticsearch, Kibana, and Logstash software packages.
-- Java dependencies.
 
-## Timeline
-- Define timelines for each objective, specifying start and end dates.
-
-## Budget
-- Allocate a budget for any additional resources or licenses if required.
-
-## Team
-- Identify team members responsible for each aspect of the project.
 
 ## Deliverables
 - Ubuntu Server VM provisioned and configured.
